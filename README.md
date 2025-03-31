@@ -46,6 +46,13 @@ This works to simplify the process of planning meals and purchasing ingredients.
 5. In your browser, navigate to "http://localhost:3000" to interact with the application.
 
 
+## Agile Development Process:**
+* The project was developed while trying to simulate an Agile workflow, with tasks being tracked on a physical Kanban board for better project management.
+
+## Future Enhancements
+* User authentication and account management
+* Better UI design
+* Database updates with more products and more information for each product. Maybe integration with externam grocery API.
 
 
 
