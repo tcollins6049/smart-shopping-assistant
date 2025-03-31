@@ -21,3 +21,32 @@ This works to simplify the process of planning meals and purchasing ingredients.
    ```
    git clone https://github.com/tcollins6049/smart-shopping-assistant.git
    ```
+
+2. **Backend setup:**
+   * Ensure you have Java and Spring Boot installed.
+   * A local SQL database will need to be setup based on the tables in the image below. This is not ideal but a mock database is being setup to make things easier to run in the future.
+
+3. **Frontend Setup:**
+   * Install dependencies
+     ```
+     npm install
+     ```
+
+4. **Run Application:**
+   * First navigate to the "backend" directory and start up the backend:
+     ```
+     ./gradlew bootrun
+     ```
+
+   * In a seperate terminal, navigate to the "frontend" directory and start up the frontend:
+     ```
+     npm run dev
+     ```
+
+5. In your browser, navigate to "http://localhost:3000" to interact with the application.
+
+
+
+
+
+     
