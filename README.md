@@ -60,10 +60,10 @@ database.type=real
 
 ### 2. Backend Setup
 * Install **Java 17+** and **Spring Boot**
-
-2. **Backend setup:**
-   * Ensure you have Java and Spring Boot installed.
-   * A local SQL database will need to be setup based on the tables in the image below. This is not ideal but a mock database is being setup to make things easier to run in the future.
+```
+cd backend
+./gradlew bootrun
+```
 
 3. **Frontend Setup:**
    * Install dependencies
