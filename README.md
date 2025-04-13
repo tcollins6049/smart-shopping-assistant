@@ -15,6 +15,13 @@
 * Prevents duplicates and manages quantities (future improvement planned)
 
 ## Tech Stack
+
+**Layer**      **Technology**
+
+Frontend
+
+
+
 * **Backend**: Java, Spring Boot, REST API
 * **Frontend**: TypeScript, React
 * **Database**: SQL (Relational Database)
