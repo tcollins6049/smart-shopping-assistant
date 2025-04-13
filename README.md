@@ -65,24 +65,15 @@ cd backend
 ./gradlew bootrun
 ```
 
-3. **Frontend Setup:**
-   * Install dependencies
-     ```
-     npm install
-     ```
+### 3. Frontend Setup
+```
+cd frontend
+npm install
+npm run dev
+```
 
-4. **Run Application:**
-   * First navigate to the "backend" directory and start up the backend:
-     ```
-     ./gradlew bootrun
-     ```
-
-   * In a seperate terminal, navigate to the "frontend" directory and start up the frontend:
-     ```
-     npm run dev
-     ```
-
-5. In your browser, navigate to "http://localhost:3000" to interact with the application.
+### 4. Open in Browser
+Visit *http://localhost:3000* to begin using the application.
 
 ## Future Enhancements
 * User authentication and account management
