@@ -1,8 +1,6 @@
 # Smart Shopping Assistant
 
-This web application is a smart shopping assistant to help users manage their shopping lists with ease. The application provides a list of products which the user can add to there shooping lists or recipes.
-The user can create custom recipes and add products to them. So the next time when the user is making their shopping list, instead of adding products one by one, they can add an entire recipe instead.
-This works to simplify the process of planning meals and purchasing ingredients.
+**Smart Shopping Assistant** is a full-stack web application designed to simplify grocery shopping and meal planning. Users can create custom recipes and generate shopping lists based on those recipes, streamlining the shopping process. This project combines thoughtful UX with solid backend architecture to demonstrate real-world application of software development practices.
 
 ## Key Features
 * **Product Management**: Users can browse a list of available products and add them to their shopping list.
