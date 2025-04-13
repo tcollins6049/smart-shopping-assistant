@@ -33,7 +33,7 @@ While working on the project, I followed an **Agile-inspired approach** to manag
 * Features were broken down into smaller tasks for better organization using color coded sticky notes depending on what the feature was for, either frontend, backend, database, or testing.
 * Backend includes tests for core functionality and database communication.
 
-// TODO; Image of physical Kanban board
+![Kanban Board](./images/kanban-board.jpg)
 
 ## Database Schema
 The backend relies on a **relational SQL database**. Below is a high-level view of the schema used in the project:
