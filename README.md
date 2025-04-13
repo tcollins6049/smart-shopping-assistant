@@ -7,6 +7,12 @@
 * Browse and select froma list of products.
 * Add individual products to your shopping list by dragging and dropping them in.
 ### Recipe Builder
+* Create, edit, and save custom recipes.
+* Add multiple products as ingredients by also just dragging and dropping them in.
+* Reuse recipes in future shopping trips.
+### Smart Shopping List
+* Instantly populate your shopping list by dragging one or more saved recipes in.
+* Prevents duplicates and manages quantities (future improvement planned)
 
 ## Tech Stack
 * **Backend**: Java, Spring Boot, REST API
