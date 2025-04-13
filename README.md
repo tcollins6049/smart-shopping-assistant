@@ -38,7 +38,7 @@ While working on the project, I followed an **Agile-inspired approach** to manag
 ## Database Schema
 The backend relies on a **relational SQL database**. Below is a high-level view of the schema used in the project:
 
-// TODO: Image of database diagram
+![Database Schema](./images/database-schema.png)
 
 ## Getting Started
 ### 1. Clone the Repository
