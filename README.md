@@ -66,10 +66,6 @@ The backend relies on a **relational SQL database**. Below is a high-level view 
 
 5. In your browser, navigate to "http://localhost:3000" to interact with the application.
 
-
-## Agile Development Process:**
-* The project was developed while trying to simulate an Agile workflow, with tasks being tracked on a physical Kanban board for better project management.
-
 ## Future Enhancements
 * User authentication and account management
 * Better UI design
