@@ -78,7 +78,7 @@ Visit *http://localhost:3000* to begin using the application.
 ## Future Enhancements
 * User authentication and account management
 * Better UI design
-* Database updates with more products and more information for each product. Maybe integration with externam grocery API.
+* Database updates with more products and more information for each product. Maybe integration with external grocery API.
 
 
 
