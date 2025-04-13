@@ -18,10 +18,10 @@
 
 | Layer      | Technology                                   |
 | :--------: | :--------------                              |
-| Frontend   | React, TypeScript                            |
-| Backend    | Java, Spring Boot, REST API                  |
-| Database   | SQL                                          |
-| Testing    | JUnit                                        |
+| Frontend   | **React**, **TypeScript**                    |
+| Backend    | **Java**, **Spring Boot**, REST API          |
+| Database   | **SQL**                                      |
+| Testing    | **JUnit** for backend unit testing           |
 | Dev Tools  | Git, Github, Kanban board for Agile workflow |
 
 
