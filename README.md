@@ -47,7 +47,9 @@ git clone https://github.com/tcollins6049/smart-shopping-assistant.git
 cd smart-shopping-assistant
 ```
 ### 1.5. Database Setup
-A mock database has been provided so this step may be skipped unless you would like to setup your own database. In this case, follow the provided database schema to create one and also modify the following line in the file located at 'backend/src/main/resources/application.properties':
+A mock database has been provided so this step may be skipped unless you would like to setup your own database. 
+
+In this case, follow the provided database schema to create one and also modify the following line in the file located at 'backend/src/main/resources/application.properties':
 ```
 database.type=mock
 ```
