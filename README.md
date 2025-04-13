@@ -24,7 +24,7 @@
 | Testing    | **JUnit** for backend unit testing           |
 | Dev Tools  | Git, Github, Kanban board for Agile workflow |
 
-### Agile-Inspired Development
+## Agile-Inspired Development
 While working on the project, I followed an **Agile-inspired approach** to manage features and development tasks.
 * A **physical Kanban board** was created to visually track progress.
 * Features were broken down into smaller tasks for better organization using color coded sticky notes depending on what the feature was for, either frontend, backend, database, or testing.
@@ -32,7 +32,7 @@ While working on the project, I followed an **Agile-inspired approach** to manag
 
 // TODO; Image of physical Kanban board
 
-### Database Schema
+## Database Schema
 The backend relies on a **relational SQL database**. Below is a high-level view of the schema used in the project:
 
 // TODO: Image of database diagram
