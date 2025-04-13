@@ -41,10 +41,11 @@ The backend relies on a **relational SQL database**. Below is a high-level view 
 // TODO: Image of database diagram
 
 ## Getting Started
-1. Clone repository to your local machine
-   ```
-   git clone https://github.com/tcollins6049/smart-shopping-assistant.git
-   ```
+### 1. Clone the Repository
+```
+git clone https://github.com/tcollins6049/smart-shopping-assistant.git
+cd smart-shopping-assistant
+```
 
 2. **Backend setup:**
    * Ensure you have Java and Spring Boot installed.
