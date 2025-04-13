@@ -16,9 +16,8 @@
 
 ## Tech Stack
 
-**Layer**      **Technology**
-
-Frontend
+| Layer      | Technology      |
+| ---------- | --------------- |
 
 
 
