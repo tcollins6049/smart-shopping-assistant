@@ -24,14 +24,6 @@
 | Testing    | **JUnit** for backend unit testing           |
 | Dev Tools  | Git, Github, Kanban board for Agile workflow |
 
-
-
-* **Backend**: Java, Spring Boot, REST API
-* **Frontend**: TypeScript, React
-* **Database**: SQL (Relational Database)
-* **Testing**: Unit tests for backend functionality
-* **Development Approach**: Simulated Agile development using a Kanban board
-
 ## Getting Started
 1. Clone repository to your local machine
    ```
