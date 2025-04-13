@@ -5,6 +5,8 @@ import { getUserId } from '../../userInfo';
 import { insertRecipe, getAllUserRecipes } from '../../services/RecipesService';
 import RecipeItem from './RecipeItem';
 
+
+
 export default function RecipeList() {
     const [showForm, setShowForm] = useState<boolean>(false);
     const [recipes, setRecipes] = useState<any[]>([]);
@@ -16,7 +18,8 @@ export default function RecipeList() {
         }
 
         fetchRecipes();
-    })
+    }, []);
+
 
     const handleFormSubmit = async (name: string, description: string) => {
         console.log("Inserting recipe");
@@ -37,7 +40,10 @@ export default function RecipeList() {
 
             <ul>
                 {recipes.map((recipe) => (
-                    <RecipeItem key={recipe.id} recipe={recipe} />
+                    <RecipeItem 
+                        key={recipe.id} 
+                        recipe={recipe} 
+                    />
                 ))}
             </ul>
         </div>

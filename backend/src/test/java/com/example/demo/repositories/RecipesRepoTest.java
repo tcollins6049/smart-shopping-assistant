@@ -29,11 +29,11 @@ public class RecipesRepoTest {
     @Test
     void testInsertDeleteRecipe() {
         // Create user (Foregin Key)
-        Users new_user = new Users(0L, "Test Username", "Test Password");
+        Users new_user = new Users(101L, "Test Username", "Test Password");
         usersRepository.insert(new_user);
 
         // Create and insert recipe
-        Recipes new_recipe = new Recipes(1L, "Test Recipe", "Test Description", 0L);
+        Recipes new_recipe = new Recipes(101L, "Test Recipe", "Test Description", 101L);
         recipesRepository.insert(new_recipe);
 
         Integer count = jdbcTemplate.queryForObject("SELECT COUNT(*) FROM Recipes WHERE id = ? AND name = ?",
@@ -47,11 +47,11 @@ public class RecipesRepoTest {
     @Test
     void testFindRecipes() {
         // Create user (Foregin Key)
-        Users new_user = new Users(0L, "Test Username", "Test Password");
+        Users new_user = new Users(101L, "Test Username", "Test Password");
         usersRepository.insert(new_user);
 
         // Create and insert recipe
-        Recipes new_recipe = new Recipes(1L, "Test Recipe", "Test Description", 0L);
+        Recipes new_recipe = new Recipes(101L, "Test Recipe", "Test Description", 101L);
         recipesRepository.insert(new_recipe);
 
         // Find all

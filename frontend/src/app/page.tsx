@@ -16,6 +16,7 @@ export default function Home() {
     const fetchShoppingList = async () => {
       console.log("USER ID PAGE: ", getUserId());
       const shoppingListId = await findShoppingList(getUserId());
+      console.log("ShoppingList Id: ", shoppingListId.id);
       setShoppingListId(shoppingListId.id);
     }
 

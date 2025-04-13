@@ -25,6 +25,16 @@ export const findAllSListItems = async (shoppingListId: number) => {
     }
 }
 
+export const addRecipeToList = async (recipeId: number) => {
+    try {
+        console.log("RtoL shopping list id: ", getShoppingListId());
+        await axios.post(`${API_BASE_URL}/shoppinglist/${getShoppingListId()}/add-recipe/${recipeId}`);
+    } catch (error) {
+        console.error('Error adding recipe to list:', error);
+        throw error;
+    }
+}
+
 export const addShoppingListItem = async (product_id: number, shopping_list_id: number) => {
     try {
         const shoppingListItem: ShoppingListItem = {
@@ -40,6 +50,8 @@ export const addShoppingListItem = async (product_id: number, shopping_list_id: 
         throw error;
     }
 }
+
+
 
 export const deleteShoppingListItem = async (id: number) => {
     try {

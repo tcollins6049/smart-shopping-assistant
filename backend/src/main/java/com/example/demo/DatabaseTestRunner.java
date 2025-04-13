@@ -19,7 +19,7 @@ public class DatabaseTestRunner implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         try {
-            String sql = "SELECT * FROM products";
+            String sql = "SELECT * FROM Shopping_List_Items";
             List<Map<String, Object>> result = jdbcTemplate.queryForList(sql);
 
             if (result.isEmpty()) {

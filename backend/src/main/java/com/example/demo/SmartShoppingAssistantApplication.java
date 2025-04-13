@@ -6,7 +6,11 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.beans.factory.annotation.Value;
 
+import java.sql.SQLException;
+import java.sql.Connection;
+import java.sql.Statement;
 import javax.sql.DataSource;
 
 // Main application class
@@ -21,7 +25,18 @@ public class SmartShoppingAssistantApplication {
 
 	// Defining datasource bean to configure the connection to the SQL Server
 	@Bean
-	public DataSource dataSource() {
+	public DataSource dataSource(@Value("${database.type}") String databaseType) {
+		if ("real".equals(databaseType)) {
+			System.out.println("ITS REAL");
+			return getSqlSource();
+		} else {
+			System.out.println("ITS A MOCK");
+			return getH2Source();
+		}
+	}
+
+
+	private DataSource getSqlSource() {
 		// Instance of DriverManagerDataSource
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 
@@ -31,10 +46,20 @@ public class SmartShoppingAssistantApplication {
 		dataSource.setUsername("collinstm");
 		dataSource.setPassword("Triagan2010");
 
-		System.out.println("DataSource bean created");
-
-		// Return configured datasource instance
 		return dataSource;
+	}
+
+
+	private DataSource getH2Source() {
+		DriverManagerDataSource dataSource = new DriverManagerDataSource();
+        
+		// Use in-memory H2 database
+        dataSource.setDriverClassName("org.h2.Driver");
+        dataSource.setUrl("jdbc:h2:file:./src/test/resources/data/testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE");
+        dataSource.setUsername("sa");
+        dataSource.setPassword("");
+
+        return dataSource;
 	}
 
 

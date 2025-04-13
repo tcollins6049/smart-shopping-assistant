@@ -1,5 +1,5 @@
 
-let user_id: number = 1;
+let user_id: number = 0;
 let shopping_list_id: number = 0;
 
 // Getter and setter for user_id

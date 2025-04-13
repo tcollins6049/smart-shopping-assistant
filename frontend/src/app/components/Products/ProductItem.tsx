@@ -18,7 +18,10 @@ export default function ProductItem({ product }: ProductProps) {
 
     // Handle drag start
     const handleDragStart = (event: React.DragEvent<HTMLElement>) => {
-        event.dataTransfer.setData('text/plain', JSON.stringify(product));
+        event.dataTransfer.setData(
+            'text/plain', 
+            JSON.stringify({ ...product, type: 'product' })
+        );
     }
 
     return (

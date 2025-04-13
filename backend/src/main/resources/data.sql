@@ -1,0 +1,2 @@
+DELETE FROM Recipes WHERE id = 101;
+DELETE FROM Users WHERE id = 101;

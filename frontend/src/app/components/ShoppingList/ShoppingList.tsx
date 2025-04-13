@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import { findAllSListItems } from '../../services/Shopping_List_ItemsService';
 import ShoppingListItem from './ShoppingListItem';
-import { addShoppingListItem } from '../../services/Shopping_List_ItemsService';
+import { addRecipeToList, addShoppingListItem } from '../../services/Shopping_List_ItemsService';
 
 type ShoppingListProps = {
     shoppingListId: number;
@@ -10,8 +10,9 @@ type ShoppingListProps = {
 export default function ShoppingList({ shoppingListId }: ShoppingListProps) {
     const [listItems, setListItems] = useState<any[]>([]);
     
+    console.log("ShoppingList Id: ", shoppingListId);
     useEffect(() => {
-        if (shoppingListId) {
+        if (shoppingListId !== null && shoppingListId !== undefined) {
             const fetchItems = async () => {
                 console.log("Shop id: ", shoppingListId);
                 const data = await findAllSListItems(shoppingListId);
@@ -24,15 +25,23 @@ export default function ShoppingList({ shoppingListId }: ShoppingListProps) {
 
     const handleDrop = async (event: React.DragEvent<HTMLDivElement>) => {
         event.preventDefault();
-        const productData = event.dataTransfer.getData('text/plain');
-        const product = JSON.parse(productData);
+        const droppedData = event.dataTransfer.getData('text/plain');
+        console.log("Parsed data: ", droppedData);
 
-        // Insert product into shopping list
-        await addShoppingListItem(product.id, shoppingListId);
+        try {
+            const parsed = JSON.parse(droppedData);
+            if (parsed.type === 'product') {
+                await addShoppingListItem(parsed.id, shoppingListId);
+            } else if (parsed.type === 'recipe') {
+                await addRecipeToList(parsed.id);
+            }
 
-        // Refresh the list
-        const data = await findAllSListItems(shoppingListId);
-        setListItems(data);
+            // Refresh the list
+            const data = await findAllSListItems(shoppingListId);
+            setListItems(data);
+        } catch (error) {
+            console.error("Failed to process dropped item:", error);
+        }
     }
 
     const handleDragOver = (event: React.DragEvent<HTMLDivElement>) => {

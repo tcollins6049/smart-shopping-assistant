@@ -70,8 +70,21 @@ export default function RecipeItem({ recipe }: RecipeProps) {
         event.preventDefault();
     }
 
+    const handleDragStart = (event: React.DragEvent<HTMLElement>) => {
+        event.dataTransfer.setData(
+            'text/plain',
+            JSON.stringify({ ...recipe, type: 'recipe' })
+        );
+    }
+
     return (
-        <li className="recipe-card" onDrop={handleDrop} onDragOver={handleDragOver}>
+        <li 
+            className="recipe-card" 
+            onDrop={handleDrop} 
+            onDragOver={handleDragOver} 
+            onDragStart={handleDragStart}
+            draggable
+        >
             <div className="recipe-details">
                 <h2 className="recipe-name">{recipe.name}</h2>
                 <p className="recipe-description">{recipe.description}</p>

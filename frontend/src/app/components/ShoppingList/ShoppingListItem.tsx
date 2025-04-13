@@ -23,7 +23,7 @@ export default function ShoppingListItem({ shoppingItem }: ShoppingListItemProps
         }
         
         fetchProductData();
-    })
+    }, []);
 
     return (
         <li className="shopping-list-item">

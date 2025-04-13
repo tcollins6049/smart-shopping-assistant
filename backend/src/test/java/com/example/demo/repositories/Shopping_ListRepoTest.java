@@ -28,11 +28,11 @@ public class Shopping_ListRepoTest {
     @Test
     void testInsertDeleteList() {
         // Create user with id 1L (Need because of foreign key)
-        Users new_user = new Users(0L, "Test Username", "Test Password");
+        Users new_user = new Users(101L, "Test Username", "Test Password");
         usersRepository.insert(new_user);
 
         // Create list and insert
-        Shopping_List new_list = new Shopping_List(getNextId(), 0L);
+        Shopping_List new_list = new Shopping_List(getNextId(), 101L);
         shopping_listRepository.insert(new_list);
 
         // Test Insert

@@ -29,6 +29,11 @@ public class Shopping_List_ItemsController {
         shopping_list_itemsService.insertListItem(shopping_list_item);
     }
 
+    @PostMapping("/shoppinglist/{listId}/add-recipe/{recipeId}")
+    public void addRecipeToShoppingList(@PathVariable Long listId, @PathVariable Long recipeId) {
+        shopping_list_itemsService.addRecipeToShoppingList(recipeId, listId);
+    }
+
     @DeleteMapping("/{id}")
     public void deleteShoppingListItem(@PathVariable Long id) {
         Shopping_List_Items shopping_list_item = shopping_list_itemsService.findItemById(id);
