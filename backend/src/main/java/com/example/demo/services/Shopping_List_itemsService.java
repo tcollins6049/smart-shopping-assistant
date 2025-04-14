@@ -8,9 +8,14 @@ import com.example.demo.repositories.Recipe_ItemsRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Service layer for managing operations related to the Shopping_List_Items table
+ * Acts as intermediary between the controller and repository.
+ */
 @Service
 public class Shopping_List_itemsService {
     
@@ -20,33 +25,60 @@ public class Shopping_List_itemsService {
     @Autowired
     private Recipe_ItemsRepository recipe_ItemsRepository;
 
-    // Find all items in shopping list by shopping_list_id
+    /**
+     * Retrieves all shopping list items for a shopping list based on its shopping list id
+     * 
+     * @param shopping_list_id The ID of the shopping list
+     * @return A list of items in the shopping list
+     */
     public List<Shopping_List_Items> findAllSListItems(Long shopping_list_id) {
         return shopping_list_itemsRepository.findAllItems(shopping_list_id);
     }
 
-    // Find item by id
+    /**
+     * Retrieves a shopping list item by its ID
+     * 
+     * @param id The item's ID
+     * @return The item, or null if not found
+     */
     public Shopping_List_Items findItemById(Long id) {
         Optional<Shopping_List_Items> optionalItem = shopping_list_itemsRepository.findById(id);
         return optionalItem.orElse(null);
     }
 
-    // Insert into shopping_list_items table
+    /**
+     * Inserts a new item into the shopping list.
+     * 
+     * @param shopping_list_item The item to insert
+     */
     public void insertListItem(Shopping_List_Items shopping_list_item) {
         shopping_list_itemsRepository.insert(shopping_list_item);
     }
 
-    // Delete from shopping_list_items table
+    /**
+     * Deletes an item from the shopping list
+     * 
+     * @param shopping_list_item The item to delete
+     */
     public void deleteListItem(Shopping_List_Items shopping_list_item) {
         shopping_list_itemsRepository.delete(shopping_list_item);
     }
 
-    // Get next id
+    /**
+     * Gets the next available ID to use when inserting a new shopping list item
+     * 
+     * @return The next ID
+     */
     public Long getNextId() {
         return shopping_list_itemsRepository.getNextId();
     }
 
-    // Add items from a recipe to a shopping list
+    /**
+     * Adds all products from a recipe to the shopping list.
+     * 
+     * @param recipe_id The ID of the recipe
+     * @param shopping_list_id The ID of the target shopping list
+     */
     @Transactional
     public void addRecipeToShoppingList(Long recipe_id, Long shopping_list_id) {
         List<Recipe_Items> recipeItems = recipe_ItemsRepository.findAllRecipeItems(recipe_id);
