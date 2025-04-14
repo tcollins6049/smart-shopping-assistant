@@ -1,58 +1,84 @@
 # Smart Shopping Assistant
 
-This web application is a smart shopping assistant to help users manage their shopping lists with ease. The application provides a list of products which the user can add to there shooping lists or recipes.
-The user can create custom recipes and add products to them. So the next time when the user is making their shopping list, instead of adding products one by one, they can add an entire recipe instead.
-This works to simplify the process of planning meals and purchasing ingredients.
+**Smart Shopping Assistant** is a full-stack web application designed to simplify grocery shopping and meal planning. Users can create custom recipes and generate shopping lists based on those recipes, streamlining the shopping process. This project combines thoughtful UX with solid backend architecture to demonstrate real-world application of software development practices.
 
-## Key Features
-* **Product Management**: Users can browse a list of available products and add them to their shopping list.
-* **Recipes**: Create a custom recipe and add products into it. Add full recipe to shopping list.
-* **Smart Shopping List**: Automatically update shopping list by adding ingredients from recipe.
+## Application Preview
+// TODO: Images showing main application screen. Maybe also recipe creation.
+
+## Features
+### Product Management
+* Browse and select froma list of products.
+* Add individual products to your shopping list by dragging and dropping them in.
+### Recipe Builder
+* Create, edit, and save custom recipes.
+* Add multiple products as ingredients by also just dragging and dropping them in.
+* Reuse recipes in future shopping trips.
+### Smart Shopping List
+* Instantly populate your shopping list by dragging one or more saved recipes in.
+* Prevents duplicates and manages quantities (future improvement planned)
 
 ## Tech Stack
-* **Backend**: Java, Spring Boot, REST API
-* **Frontend**: TypeScript, React
-* **Database**: SQL (Relational Database)
-* **Testing**: Unit tests for backend functionality
-* **Development Approach**: Simulated Agile development using a Kanban board
+
+| Layer      | Technology                                   |
+| :--------: | :--------------                              |
+| Frontend   | **React**, **TypeScript**                    |
+| Backend    | **Java**, **Spring Boot**, REST API          |
+| Database   | **SQL**                                      |
+| Testing    | **JUnit** for backend unit testing           |
+| Dev Tools  | Git, Github, Kanban board for Agile workflow |
+
+## Agile-Inspired Development
+While working on the project, I followed an **Agile-inspired approach** to manage features and development tasks.
+* A **physical Kanban board** was created to visually track progress.
+* Features were broken down into smaller tasks for better organization using color coded sticky notes depending on what the feature was for, either frontend, backend, database, or testing.
+* Backend includes tests for core functionality and database communication.
+
+<img src="./images/kanban-board.jpg" width=50% height=50%>
+
+## Database Schema
+The backend relies on a **relational SQL database**. Below is a high-level view of the schema used in the project:
+
+![Database Schema](./images/database-schema.png)
 
 ## Getting Started
-1. Clone repository to your local machine
-   ```
-   git clone https://github.com/tcollins6049/smart-shopping-assistant.git
-   ```
+### 1. Clone the Repository
+```
+git clone https://github.com/tcollins6049/smart-shopping-assistant.git
+cd smart-shopping-assistant
+```
+### 1.5. Database Setup
+A mock database has been provided so this step may be skipped unless you would like to setup your own database. 
 
-2. **Backend setup:**
-   * Ensure you have Java and Spring Boot installed.
-   * A local SQL database will need to be setup based on the tables in the image below. This is not ideal but a mock database is being setup to make things easier to run in the future.
+In this case, follow the provided database schema to create one and also modify the following line in the file located at 'backend/src/main/resources/application.properties':
+```
+database.type=mock
+```
+change to:
+```
+database.type=real
+```
 
-3. **Frontend Setup:**
-   * Install dependencies
-     ```
-     npm install
-     ```
+### 2. Backend Setup
+* Install **Java 17+** and **Spring Boot**
+```
+cd backend
+./gradlew bootrun
+```
 
-4. **Run Application:**
-   * First navigate to the "backend" directory and start up the backend:
-     ```
-     ./gradlew bootrun
-     ```
+### 3. Frontend Setup
+```
+cd frontend
+npm install
+npm run dev
+```
 
-   * In a seperate terminal, navigate to the "frontend" directory and start up the frontend:
-     ```
-     npm run dev
-     ```
-
-5. In your browser, navigate to "http://localhost:3000" to interact with the application.
-
-
-## Agile Development Process:**
-* The project was developed while trying to simulate an Agile workflow, with tasks being tracked on a physical Kanban board for better project management.
+### 4. Open in Browser
+Visit *http://localhost:3000* to begin using the application.
 
 ## Future Enhancements
 * User authentication and account management
 * Better UI design
-* Database updates with more products and more information for each product. Maybe integration with externam grocery API.
+* Database updates with more products and more information for each product. Maybe integration with external grocery API.
 
 
 
