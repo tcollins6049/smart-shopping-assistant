@@ -8,35 +8,47 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.beans.factory.annotation.Value;
 
-import java.sql.SQLException;
-import java.sql.Connection;
-import java.sql.Statement;
 import javax.sql.DataSource;
 
-// Main application class
+/**
+ * Main application class for the Smart Shopping Assistant backend.
+ * Class configures the application's data source depending on
+ * the environment (real or mock) and starts the Spring Boot application.
+ */
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class })
 public class SmartShoppingAssistantApplication {
 
-	// Main method: Entry point of the Spring Boot application
+	/**
+	 * Entry point of the Spring Boot application
+	 */
 	public static void main(String[] args) {
 		SpringApplication.run(SmartShoppingAssistantApplication.class, args);
 	}
 
-
-	// Defining datasource bean to configure the connection to the SQL Server
+	/**
+	 * Defines the DataSource bean to be used throughout the application.
+	 * Will either be the mock database or a local SQL database depending on
+	 * the database.type variable defined in application.properties.
+	 * 
+	 * @param databaseType The type of database to use ("real" or "mock")
+	 * @return configured DataSource instance
+	 */
 	@Bean
 	public DataSource dataSource(@Value("${database.type}") String databaseType) {
 		if ("real".equals(databaseType)) {
-			System.out.println("ITS REAL");
+			System.out.println("Using local SQL database");
 			return getSqlSource();
 		} else {
-			System.out.println("ITS A MOCK");
+			System.out.println("Using mock database");
 			return getH2Source();
 		}
 	}
 
-
+	/**
+	 * Returns a DataSource configured for a real local SQL server
+	 */
 	private DataSource getSqlSource() {
+
 		// Instance of DriverManagerDataSource
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 
@@ -49,8 +61,12 @@ public class SmartShoppingAssistantApplication {
 		return dataSource;
 	}
 
-
+	/**
+	 * Returns a DataSource configured for the mock H2 database
+	 */
 	private DataSource getH2Source() {
+
+		// Instance of DriverManagerDataSource
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
         
 		// Use in-memory H2 database
@@ -63,7 +79,12 @@ public class SmartShoppingAssistantApplication {
 	}
 
 
-	// Defining a jdbcTemplate bean to interact with the database using SQL
+	/**
+	 * Defines a JdbcTemplate bean for SQL database interaction
+	 * 
+	 * @param dataSource The configured data source (real or mock)
+	 * @return	JdbcTemplate instance
+	 */
 	@Bean
     public JdbcTemplate jdbcTemplate(DataSource dataSource) {
         return new JdbcTemplate(dataSource);
